@@ -1,0 +1,90 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark headline" >
+    <img src="../../assets/k.jpg" alt="logo" height="30px">
+    <h1 class="pro"></h1>
+    <a class="s" routerLink="/">Sign Out</a>
+  
+</nav> -->
+
+<div class="container">
+
+    <br>
+    <nav id="butt" class="nav justify-content-center u">
+        <a routerLink="/stuhome" routeLinkActive="active" routerLinkActiveOption="{exact: true}" style="margin-right:70px">Home</a>
+        <a routerLink="/stusubject"  style="margin-right:70px">Subject</a>
+        <a routerLink="/stuexam"  style="margin-right:70px">Exam</a>
+        <a routerLink="/sturepeat"  style="margin-right:70px">Repeat</a>
+        
+      </nav>
+      <hr>
+
+      <h3 style="font: bold; color: #090b6e">Exam Time Table</h3>
+          <h4 style="color: #090b6e; font: bold">University of Colombo Scool of Computing</h4>
+          <hr>
+ 
+  <div class="">
+    
+      <div class="col-md-12 ttt" id="content" #content>
+
+          <div *ngIf="subjects" style="margin-top: 10px">
+            <div class="row filterBy">
+                <div class="row filterBy">
+                    <div class="col-md-12">
+                        <h5 class="col-md-2"></h5>
+                        <button class="btn btn-primary col-md-3" [class.active]="filterBy==='ug'" (click)="filterBy('ug')">Under Graduate Students</button>
+                        <h5 class="col-md-3"></h5>
+                        <button class="btn btn-primary col-md-3" [class.active]="filterBy==='pg'" (click)="filterBy('pg')">Post Graduate Students</button>
+                        <br>
+                        <br>
+                    </div>
+                <h5 class="col-xs-1"></h5>
+                <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y1s1'" (click)="filterBy('y1s1')">Y1 S1</button>
+                <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y1s2'" (click)="filterBy('y1s2')">Y1 S2</button>
+                <h5 class="col-md-1"></h5>
+                <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y2s1'" (click)="filterBy('y2s1')">Y2 S1</button>
+                <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y2s2'" (click)="filterBy('y2s2')">Y2 S2</button>
+                <h5 class="col-md-1"></h5>
+                <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y3s1'" (click)="filterBy('y3s1')">Y3 S1</button>
+                <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y3s2'" (click)="filterBy('y3s2')">Y3 S2</button>
+                <h5 class="col-md-1"></h5>
+                <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y4s1'" (click)="filterBy('y4s1')">Y4 S1</button>
+                <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y4s2'" (click)="filterBy('y4s2')">Y4 S2</button>
+            </div>
+          </div>
+        
+          <hr>
+
+        
+        <table style="width: 100%; border: 1px solid rgb(63, 65, 88)">
+          <thead>
+            <tr style="border: 1px solid rgb(63, 65, 88)">
+              <th>Subject Code</th>
+              <th>Subject Name</th>
+              <th>Year</th>
+              <th>Semester</th>
+              <th>Date</th>
+              <th>Venue</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+            </tr>
+          </thead>
+          <tr style="border: 1px solid rgb(63, 65, 88)" *ngFor = "let subject of subjects">
+              
+            <td>{{subject.sub_code}}</td>
+            <td>{{subject.sub_name}}</td>
+            <td>{{subject.sub_year}}</td>
+            <td>{{subject.sub_sem}}</td>
+            <td>{{subject.sub_examDate}}</td>
+            <td>{{subject.sub_time}}</td>
+            <td>{{subject.sub_etime}}</td>
+            <td>{{subject.sub_venue}}</td>
+            
+          </tr>
+        </table>
+        <br><br>
+  
+      </div>
+  
+  </div> 
+  
+</div>
+

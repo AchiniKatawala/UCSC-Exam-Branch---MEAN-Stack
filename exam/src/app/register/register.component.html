@@ -1,0 +1,84 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark headline" >
+    <img src="../../assets/k.jpg" alt="logo" height="30px">
+</nav> -->
+
+<div class="container">
+
+<div class="">
+  
+  <h2 class="page-header" style="color: #090b6e; text-align: center; font: bold">Create a New Account</h2>
+  <form [formGroup] = "form" (submit) = "addStudent()">
+    <div class="form-group col-md-6 field">
+      <label>Registration Number</label>
+      <input type="text" [(ngModel)]="reg_number" name="reg_number" formControlName="reg_number" class="form-control" required>
+    </div>
+    <div class="form-group col-md-6 field">
+        <label>Index Number</label>
+        <input type="text" [(ngModel)]="index_number" name="index_number" formControlName="index_number" class="form-control" required>
+      </div>
+      <div class="form-group col-md-6 field">
+          <label>Student Type</label>
+          <select type="text" class="form-control" style="height: 34px;" [(ngModel)]="stype" formControlName="stype" name="stype">
+              <option>Under Graduate</option>
+              <option>Post Graduate</option>
+            </select>
+        </div>
+      <div class="form-group col-md-6 field">
+          <label>Full Name</label>
+          <input type="text" [(ngModel)]="full_name" name="full_name" formControlName="full_name" class="form-control" required>
+    </div>
+    <div class="form-group col-md-6 field">
+        <label>ID Number</label>
+        <input type="text" [(ngModel)]="sid" name="sid" formControlName="sid" class="form-control">
+      </div>
+    <div class="form-group col-md-6 field">
+        <label>Age</label>
+        <input type="text" [(ngModel)]="age" name="age" formControlName="age" class="form-control" required>
+      </div>
+    <div class="form-group col-md-6 field">
+      <label>Current Year</label>
+      <select type="text" class="form-control" style="height: 34px;" [(ngModel)]="year" formControlName="year" name="year" required>
+        <option>Year 1</option>
+        <option>Year 2</option>
+        <option>Year 3</option>
+        <option>Year 4</option>
+      </select>
+    </div>
+    
+    
+      <div class="form-group col-md-6 field">
+          <label>Gender</label>
+          <select type="text" class="form-control" style="height: 34px;" [(ngModel)]="gender" formControlName="gender" name="gender" required>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6 field">
+            <label>Email</label>
+            <input type="text" [(ngModel)]="email" name="email" formControlName="email" class="form-control" required>
+          </div>
+          <div class="form-group col-md-6 field">
+              <label>Telephone Number</label>
+              <input type="text" [(ngModel)]="tel" name="tel" formControlName="tel" class="form-control" required>
+    </div>
+
+    <div class="form-group col-md-6 field">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="pass" name="pass" formControlName="pass" class="form-control" required>
+      </div>
+      <div class="form-group col-md-6 field">
+          <label>Confirm Password</label>
+          <input type="password" [(ngModel)]="cpass" name="cpass" formControlName="cpass" class="form-control" required>
+        </div>
+    <div class="col-md-4">
+        <input type="submit" [disabled]="!form.valid" class="btn btn-success col-md-6" value="ADD">
+    </div>
+  
+  </form>
+  <br>
+  <br>
+  <div class="col-md-12">
+      <a class="s" routerLink="/"><< Back</a>
+  </div>
+</div>
+</div>

@@ -1,0 +1,168 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark headline" >
+    <img src="../../assets/k.jpg" alt="logo" height="30px">
+    <h1 class="pro"></h1>
+    <a class="s" routerLink="/">Sign Out</a>
+</nav> -->
+
+<div class="container">
+
+    <br>
+    <nav id="butt" class="nav justify-content-center u">
+        <a routerLink="/home" routeLinkActive="active" routerLinkActiveOption="{exact: true}" style="margin-right:70px">Home</a>
+        <a routerLink="/student"  style="margin-right:70px">Register</a>
+        <a routerLink="/subject"  style="margin-right:70px">Exam</a>
+        <a routerLink="/repeat" style="margin-right:70px">Repeat</a>
+        
+      </nav>
+      <hr>
+
+<div class="">
+  
+  <h3 class="page-header" style="color: #090b6e; font: bold">Add New Student</h3>
+  <form [formGroup] = "form" (submit) = "addStudent(); myForm.reset()" #myForm="ngForm">
+    <div class="form-group col-md-6 field">
+      <label>Registration Number</label>
+      <input type="text" [(ngModel)]="reg_number" name="reg_number" formControlName="reg_number" class="form-control">
+    </div>
+    <div class="form-group col-md-6 field">
+        <label>Index Number</label>
+        <input type="text" [(ngModel)]="index_number" name="index_number" formControlName="index_number" class="form-control">
+      </div>
+      <div class="form-group col-md-6 field">
+          <label>Student Type</label>
+          <select type="text" style="height: 34px;" class="form-control" [(ngModel)]="stype" formControlName="stype" name="stype">
+              <option>Under Graduate</option>
+              <option>Post Graduate</option>
+            </select>
+        </div>
+      <div class="form-group col-md-6 field">
+          <label>Full Name</label>
+          <input type="text" [(ngModel)]="full_name" name="full_name" formControlName="full_name" class="form-control">
+    </div>
+    <div class="form-group col-md-6 field">
+        <label>ID Number</label>
+        <input type="text" [(ngModel)]="sid" name="sid" formControlName="sid" class="form-control">
+      </div>
+    <div class="form-group col-md-6 field">
+        <label>Age</label>
+        <input type="text" [(ngModel)]="age" name="age" formControlName="age" class="form-control">
+      </div>
+    <div class="form-group col-md-6 field">
+      <label>Current Year</label>
+      <select type="text" style="height: 34px;" class="form-control" [(ngModel)]="year" formControlName="year" name="year">
+        <option>Year 1</option>
+        <option>Year 2</option>
+        <option>Year 3</option>
+        <option>Year 4</option>
+      </select>
+    </div>
+    
+    
+      <div class="form-group col-md-6 field">
+          <label>Gender</label>
+          <select type="text" style="height: 34px;" class="form-control" [(ngModel)]="gender" formControlName="gender" name="gender">
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6 field">
+            <label>Email</label>
+            <input type="text" [(ngModel)]="email" name="email" formControlName="email" class="form-control">
+          </div>
+          <div class="form-group col-md-6 field">
+              <label>Telephone Number</label>
+              <input type="text" [(ngModel)]="tel" name="tel" formControlName="tel" class="form-control">
+    </div>
+
+    <div class="form-group col-md-6 field">
+        <label>Password</label>
+        <input type="password" [(ngModel)]="pass" name="pass" formControlName="pass" class="form-control" required>
+      </div>
+      <div class="form-group col-md-6 field">
+          <label>Confirm Password</label>
+          <input type="password" [(ngModel)]="cpass" name="cpass" formControlName="cpass" class="form-control" required>
+        </div>
+    <div class="col-md-4">
+        <input type="submit" [disabled]="!form.valid" routerLink="/student" class="btn btn-success col-md-6" value="ADD">
+    </div>
+  </form>
+</div>
+
+<div class="">
+    <div class="col-md-12 ttt" id="content" #content>
+
+      <div *ngIf="students" style="margin-top: 10px">
+        <div class="row filterBy">
+          <div class="col-md-12">
+              <!-- <h5 class="col-md-1"></h5>
+              <button class="btn btn-primary col-md-3" [class.active]="filterBy==='all'" (click)="filterBy('all')">All</button> -->
+              <h5 class="col-md-2"></h5>
+              <button class="btn btn-primary col-md-3" [class.active]="filterBy==='ug'" (click)="filterBy('ug')">Under Graduate Students</button>
+              <h5 class="col-md-1"></h5>
+              <button class="btn btn-primary col-md-3" [class.active]="filterBy==='pg'" (click)="filterBy('pg')">Post Graduate Students</button>
+              <br>
+              <br>
+          </div>
+          <div class="col-md-12">
+              <h5 class="col-md-2"></h5>
+              <!-- <button class="btn btn-primary col-md-1" [class.active]="filterBy==='all'" (click)="filterBy('all')">All</button>
+              <h5 class="col-md-1"></h5> -->
+              <button class="btn btn-primary col-md-1" [class.active]="filterBy==='year1'" (click)="filterBy('year1')">Year 1</button>
+              <h5 class="col-md-1"></h5>
+              <button class="btn btn-primary col-md-1" [class.active]="filterBy==='year2'" (click)="filterBy('year2')">Year 2</button>
+              <h5 class="col-md-1"></h5>
+              <button class="btn btn-primary col-md-1" [class.active]="filterBy==='year3'" (click)="filterBy('year3')">Year 3</button>
+              <h5 class="col-md-1"></h5>
+              <button class="btn btn-primary col-md-1" [class.active]="filterBy==='year4'" (click)="filterBy('year4')">Year 4</button>
+          </div>
+          
+        </div>
+      </div>
+
+
+      <h3 style="font: bold; color: #090b6e">Registered Students</h3>
+      <hr>
+
+      <!-- <form id="filter">
+          <label class="hed">Filter by Registration Number:</label>
+          <input type="text" [(ngModel)]="term" name="term">
+        </form> -->
+
+      <table style="width: 100%; border: 1px solid rgb(63, 65, 88)">
+        <thead>
+          <tr style="border: 1px solid rgb(63, 65, 88)">
+            <th>Registration Number</th>
+            <th>Index Number</th>
+            <th>Student Type</th>
+            <th>Current Year</th>
+            <th>Full Name</th>
+            <th>ID Number</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Email Address</th>
+            <th>Telephone Number</th>
+            
+          </tr>
+        </thead>
+        <tr style="border: 1px solid rgb(63, 65, 88)" *ngFor = "let student of students | filter:term">
+          <td>{{student.reg_number}}</td>
+          <td>{{student.index_number}}</td>
+          <td>{{student.stype}}</td>
+          <td>{{student.year}}</td>
+          <td>{{student.full_name}}</td>
+          <td>{{student.sid}}</td>
+          <td>{{student.age}}</td>
+          <td>{{student.gender}}</td>
+          <td>{{student.email}}</td>
+          <td>{{student.tel}}</td>
+          <td><input type="button" (click) = "deleteStudent(student._id)" value="Delete" class="btn btn-danger"></td>
+        </tr>
+        
+      </table>
+      <br><br>
+      <button class="btn btn-warning" (click)="downloadPDF()">Export to PDF</button>
+      <!-- <img src="../../assets/bb.jpg" /> -->
+
+    </div>
+</div>
+</div>

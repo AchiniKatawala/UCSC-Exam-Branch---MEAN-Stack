@@ -1,0 +1,48 @@
+.field{
+    width: 50%;
+    height: 20%;
+}
+th{
+    font-size: 125%;
+    text-align: center;
+    border: 1px solid rgb(63, 65, 88);
+}
+td{
+    font-size: 125%;
+    text-align: center;
+    border: 1px solid rgb(63, 65, 88);
+}
+.ttt{
+    float:left;
+width:1000px;
+overflow-y: auto;
+height: 320px;
+}
+.container{
+
+    background-color: rgba(240, 217, 207, 0.79);
+    height:878px;
+    
+    
+}
+#butt{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.u{
+    font-family: 'Raleway', sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+}
+.headline{
+    font-size: 25px;
+    font-weight: 900;
+
+}
+.s{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+}

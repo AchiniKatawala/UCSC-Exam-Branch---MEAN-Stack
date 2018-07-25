@@ -1,0 +1,22 @@
+.container{
+
+    background-color: rgba(223, 223, 223, 0.79);
+    height:878px;
+    
+    
+}
+
+
+
+#butt{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.u a{
+    font-family: 'Raleway', sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+}

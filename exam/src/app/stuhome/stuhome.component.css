@@ -1,0 +1,44 @@
+p{
+    font-family: 'Lobster', cursive;
+    font-size: 20PX;
+    text-align: right;
+    font-weight:1000;
+    color:black;
+}
+.container{
+
+    background-color: rgba(240, 217, 207, 0.79);
+    height:878px;
+    
+    
+}
+#butt{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.u{
+    font-family: 'Raleway', sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: right;
+
+}
+.headline{
+    font-size: 14px;
+    font-weight: 900;
+    text-align: right;
+
+}
+.s{
+    font-size: 14px;
+    color: white;
+    width: 10%
+}
+.pro{
+    width: 88%
+}
+hr{
+    color: black
+}

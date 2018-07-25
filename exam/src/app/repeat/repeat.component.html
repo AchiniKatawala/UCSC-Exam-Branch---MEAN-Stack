@@ -1,0 +1,111 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark headline" >
+    <img src="../../assets/k.jpg" alt="logo" height="30px">
+    <h1 class="pro"></h1>
+    <a class="s" routerLink="/">Sign Out</a>
+</nav> -->
+
+<div class="container">
+
+    <br>
+    <nav id="butt" class="nav justify-content-center u">
+        <a routerLink="/home" routeLinkActive="active" routerLinkActiveOption="{exact: true}" style="margin-right:70px">Home</a>
+        <a routerLink="/student"  style="margin-right:70px">Register</a>
+        <a routerLink="/subject"  style="margin-right:70px">Exam</a>
+        <a routerLink="/repeat" style="margin-right:70px">Repeat</a>    
+      </nav>
+
+<hr>
+<div class="">
+  
+    <div class="col-md-12 ttt" id="content" #content>
+
+      <div *ngIf="sturepeats" style="margin-top: 10px">
+          <div class="row filterBy">
+              <div class="col-md-12">
+                  <!-- <h5 class="col-md-1"></h5>
+                  <button class="btn btn-primary col-md-3" [class.active]="filterBy==='all'" (click)="filterBy('all')">All</button> -->
+                  <h5 class="col-md-2"></h5>
+                  <button class="btn btn-primary col-md-3" [class.active]="filterBy==='ug'" (click)="filterBy('ug')">Under Graduate Students</button>
+                  <h5 class="col-md-3"></h5>
+                  <button class="btn btn-primary col-md-3" [class.active]="filterBy==='pg'" (click)="filterBy('pg')">Post Graduate Students</button>
+                  <br>
+                  <br>
+              </div>
+              <div class="col-md-12">
+              <h5 class="col-xs-1"></h5>
+              <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y1s1'" (click)="filterBy('y1s1')">Y1 S1</button>
+              <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y1s2'" (click)="filterBy('y1s2')">Y1 S2</button>
+              <h5 class="col-md-1"></h5>
+              <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y2s1'" (click)="filterBy('y2s1')">Y2 S1</button>
+              <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y2s2'" (click)="filterBy('y2s2')">Y2 S2</button>
+              <h5 class="col-md-1"></h5>
+              <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y3s1'" (click)="filterBy('y3s1')">Y3 S1</button>
+              <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y3s2'" (click)="filterBy('y3s2')">Y3 S2</button>
+              <h5 class="col-md-1"></h5>
+              <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y4s1'" (click)="filterBy('y4s1')">Y4 S1</button>
+              <button class="btn btn-primary col-md-1" [class.active]="filterBy==='y4s2'" (click)="filterBy('y4s2')">Y4 S2</button>
+              </div>
+              
+            </div>
+            <hr>
+      </div>
+     
+      <h3 style="font: bold; color: #090b6e">Repeat Request Details</h3>
+      <h4 style="color: #090b6e; font: bold">University of Colombo School of Computing</h4>
+      <hr>
+      <form id="filter">
+        <label class="hed">Filter by subject code : <br></label>
+        <input class="se" type="text" [(ngModel)]="term" name="term">
+        <br>
+        <br>
+      </form>
+
+      <table style="width: 100%; border: 1px solid rgb(63, 65, 88)">
+        <thead>
+          <tr style="border: 1px solid rgb(63, 65, 88)">
+            <th>Registration Number</th>
+            <th>Index Number</th>
+            <th>Subject Code</th>
+            <th>Subject Name</th>
+            <th>Year</th>
+            <th>Semester</th>
+          </tr>
+        </thead>
+        <tr style="border: 1px solid rgb(63, 65, 88)" *ngFor = "let sturepeat of sturepeats | filter:term">
+          <td>{{sturepeat.sturepreg}}</td>
+          <td>{{sturepeat.sturepindex}}</td>
+          <td>{{sturepeat.sturepsub_code}}</td>
+          <td>{{sturepeat.sturepsub_name}}</td>
+          <td>{{sturepeat.sturepsub_year}}</td>
+          <td>{{sturepeat.sturepsub_sem}}</td>
+          <!-- <td><input type="button" (click) = "acceptRepeat(sturepeat._id)" class="btn btn-success" value="Accept"></td> -->
+          <td><input type="button" (click) = "deletesturepeat(sturepeat._id)" value="Delete" class="btn btn-danger"></td>
+        </tr>
+        
+      </table>
+      <br><br>
+      <button class="btn btn-warning" (click)="downloadPDF()">Export to PDF</button>
+      <!-- <img src="../../assets/bb.jpg" /> -->
+
+    </div>
+</div>
+
+<div class="">
+  <h2 class="page-header" style="color: #090b6e; font: bold">Accept Request</h2>
+  <form [formGroup]="form" (submit)="accept(); myForm.reset()" #myForm="ngForm">
+    <div class="form-group col-md-12 field">
+      <label>Registration Number</label>
+      <input type="text" [(ngModel)]="sreg" name="sreg" formControlName="sreg" class="form-control">
+    </div>
+    <div class="form-group col-md-12 field">
+        <label>Subject Code</label>
+        <input type="text" [(ngModel)]="scode" name="scode" formControlName="scode" class="form-control">
+      </div>
+      <div class="col-md-4">
+        <input type="submit" [disabled]="!form.valid" class="btn btn-success col-md-6" value="Accept">
+      </div>
+  </form>
+
+</div>
+
+</div>

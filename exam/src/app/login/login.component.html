@@ -1,0 +1,19 @@
+ 
+<div class="body">
+    <img src="../../assets/s.jpg" style="width: 100%; height: 878px;">
+  <div class="loginBox">
+    <div>
+        <h1>UCSC Exam Branch</h1>
+    </div>
+      
+     <form (submit)="loginuser1()">
+        <p>User Name</p>
+        <input type="text" name="reg_number" [(ngModel)]="reg_number" placeholder="Registration Number" required>
+        <p>Password</p>
+        <input type="password" name="pass" [(ngModel)]="pass" placeholder="Password" required>
+        <input type="submit" name="login" value="Login">
+     </form>
+     <a class="a" routerLink="/register"  style="margin-right:70px; align-items: center">Sign In Here</a>
+  </div>
+</div>
+    
